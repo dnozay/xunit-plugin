@@ -131,6 +131,9 @@ public class XUnitTransformerCallable extends MasterToSlaveFileCallable<Integer>
             }
 
             processedFiles++;
+            if (processedFiles % 20 == 0) {
+                Thread.sleep(50);
+            }
         }
         return processedFiles;
     }
